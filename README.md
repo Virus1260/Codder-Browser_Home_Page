@@ -2,6 +2,14 @@
 
 This is a creative and coding-inspired homepage for making the browser's new tab screen more interesting. It features high-quality HD backgrounds including minimal, clean, dark, coding live, etc type images.
 
+## Demo
+
+You can see a live demo of the project here:
+- Backend: https://gpt-1260.onrender.com/
+- Frontend: https://gpt-1260.vercel.app/ OR [gpt-1260-git-main-virus1260.vercel.app](https://gpt-1260-git-main-virus1260.vercel.app/) OR [gpt-1260-jadu7vixm-virus1260.vercel.app](https://gpt-1260-jadu7vixm-virus1260.vercel.app/)
+
+
+
 ## Getting Started
 
 To activate this homepage, follow these steps in your browser:
