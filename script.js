@@ -1,10 +1,24 @@
+// ----------------------to handel google search quarry---------------------------------
 function googleSearch() {
     var text = document.getElementById("search").value;
     var cleanQuery = text.replace(" ", "+", text);
     var url = 'http://www.google.com/search?q=' + cleanQuery;
     window.location.href = url;
 }
+// ----------------------to handel Enter Key press for google search---------------------------------
+// Get the input element and the button element
+const input = document.querySelector('#search-input');
+const button = document.querySelector('#image-button');
 
+// Listen for the Enter key being pressed
+input.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        // Trigger a click event on the button
+        button.click();
+    }
+});
+
+// -----------------------------random Background seter from 67images ------------------------------
 function setRandomBackground() {
     const imagePath = "bg/";
     const numOfImages = 67; // number of images in the folder
@@ -23,3 +37,4 @@ function setRandomBackground() {
 }
 
 setRandomBackground();
+
