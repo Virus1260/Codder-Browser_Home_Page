@@ -116,6 +116,27 @@
                                 <i class="fa-regular fa-microphone"></i>
                             </button>
                         </div>
+
+                        <script>
+                            const searchInput = document.getElementById('search');
+                            const searchButton = document.getElementById('image-button');
+
+                            searchInput.addEventListener('keypress', function (event) {
+                                if (event.keyCode === 13) { // Enter key
+                                    event.preventDefault();
+                                    searchButton.click();
+                                }
+                            });
+
+                            function googleSearch() {
+                                const query = searchInput.value;
+                                if (query) {
+                                    window.location.href = `https://www.google.com/search?q=${query}`;
+                                }
+                            }
+                        </script>
+
+
                         <!-- _______________________________________________________________________________________________________________________________________________________________________________________ -->
                         <!-- -------------------------------------------------------------------WebCards-------------------------------------------------------------------------------------------------------- -->
                         <div id="apps-container">
