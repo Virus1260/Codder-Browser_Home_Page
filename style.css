@@ -15,7 +15,7 @@
 
 body {
     background-color: rgb(var(--body-color));
-    background-image: url(./bg/26.jpg);
+    /* background-image: url(./bg/26.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

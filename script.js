@@ -24,7 +24,7 @@ function setRandomBackground() {
     img.src = bgImageUrl;
 }
 
-// setRandomBackground();
+setRandomBackground();
 
 // ------------------------------------------microphone for voice search-----------------------------------------
 // Check if the user's device has a microphone
