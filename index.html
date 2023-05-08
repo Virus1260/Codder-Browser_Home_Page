@@ -80,12 +80,16 @@
                                         </a>
                                         <a href="https://sketchfab.com/shekharmishra2003"
                                             class="social-button social-button--sketchfab" aria-label="Sketchfab">
-                                            <i class="fab fa-sketchfab"></i>
+                                            <i class="fab fa-sketchfab"><img
+                                                    src="https://static.sketchfab.com/img/press/logos/sketchfab-logo-store.svg"
+                                                    alt="Sketchfab logo" height="22px"></i>
                                         </a>
+
                                         <a href="https://grabcad.com/shekhar.mishra-2/"
                                             class="social-button social-button--grabcad" aria-label="GrabCAD">
-                                            <i class="fab fa-grabcad"></i>
+                                            <i class="fab fa-grabcad"><span style="color: rgb(0, 0, 0);">G</span><span style="color: red;">C</span></i>
                                         </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +100,7 @@
                         <a style="display: inline-block;">
                             <h3 class="txt-ne" style=" margin-left: 11%; margin-bottom: 12%;"
                                 data-text="Developer Rahul">
-                                <div id="editable-text" contenteditable="true">React with React</div>
+                                <div id="editable-text" contenteditable="true">Reaction with React</div>
                             </h3>
                         </a>
                         <!-- _______________________________________________________________________________________ -->
@@ -116,8 +120,8 @@
                                 <i class="fa-regular fa-microphone"></i>
                             </button>
                         </div>
-                        
-<!------------------------to handel Enter Key press for google search--------------------------------- -->
+
+                        <!------------------------to handel Enter Key press for google search--------------------------------- -->
                         <script>
                             const searchInput = document.getElementById('search');
                             const searchButton = document.getElementById('image-button');
@@ -135,6 +139,39 @@
                                     window.location.href = `https://www.google.com/search?q=${query}`;
                                 }
                             }
+
+                            // ------------------------------------------microphone for voice search-----------------------------------------
+                            // Check if the user's device has a microphone
+                            if (!('webkitSpeechRecognition' in window)) {
+                                alert("Your device doesn't support speech recognition");
+                            } else {
+                                // Create a new speech recognition instance
+                                var recognition = new webkitSpeechRecognition();
+                                recognition.continuous = false;
+                                recognition.interimResults = false;
+
+                                // Request permission to use the microphone
+                                recognition.onstart = function () {
+                                    console.log("Speech recognition started");
+                                };
+                                recognition.onerror = function (event) {
+                                    console.error("Speech recognition error:", event.error);
+                                };
+
+                                // Start speech recognition when the mic button is clicked
+                                document.getElementById('mic-button').onclick = function () {
+                                    recognition.start();
+                                };
+
+                                // Handle speech recognition results
+                                recognition.onresult = function (event) {
+                                    var result = event.results[0][0].transcript;
+                                    console.log("Speech recognition result:", result);
+                                    // Do something with the result
+                                };
+                            }
+        // _______________________________________________________________________________________
+
 
                         </script>
 
