@@ -178,6 +178,7 @@ input {
 
 #search-container>button {
     width: 3.5rem;
+    height: 2.5rem;
     border-radius: 0.2rem;
     cursor: pointer;
 }
@@ -1351,7 +1352,7 @@ svg {
 
 #image-button:hover,
 #mic-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* __________________________________________________________________________ */
@@ -1379,7 +1380,7 @@ svg {
     animation: GradientBackground 4s ease infinite;
     background: linear-gradient(to right, #6600ff, #ff0066, #00ffff);
     background-size: 200% 200%;
-    animation: GradientBackground 4s ease infinite;
+    animation: GradientBackground 3.5s ease infinite;
 }
 
 #image-button:hover,#mic-button:hover {
