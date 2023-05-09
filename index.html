@@ -42,7 +42,7 @@
                                         </div>
                                     </main>
                                 </div>
-                                <div class='child' style="padding-left: 12%; padding-right: 12%; padding-top: 1%;"> 
+                                <div class='child' style="padding-left: 12%; padding-right: 12%; padding-top: 1%;">
                                     <button type="button" id="user-menu-button"
                                         style="margin-right: 10%; margin-top: 10%;">
                                         <img src="./dp.gif" style="height: 100px; width: 100px; " alt="" />
@@ -112,20 +112,101 @@
                         <!-- _______________________________________________________________________________________ -->
 
                         <!-- -----------------------------------Google Search----------------------------- -->
-                        <div id="search-container" style="margin-top: 5%;">
+                        <!-- <div id="search-container" style="margin-top: 5%;">
                             <div id="search-input-container">
                                 <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="" />
                                 <input type="text" placeholder="Search" id="search" />
+                                <div id="suggestions"></div>
                             </div>
-
                             <button id="image-button" onclick="googleSearch();" type="button">
-                                <i class="fa-regular fa-search"></i>
+                                <span class=""> <img src="./smedialogos/magnify.png" alt=""></span>
                             </button>
+                            <button id="mic-button" type="button">
+                                <i class="fa-regular fa-microphone"></i>
+                            </button>
+                        </div> -->
 
+                        <!-- HTML code -->
+                        <div id="search-container" style="margin-top: 5%;">
+                            <div id="search-input-container">
+                                <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="" />
+                                <input type="text" placeholder="Search" id="search" onkeyup="handleInput(this)" />
+                            </div>
+                            <button id="image-button" onclick="googleSearch();" type="button">
+                                <span class=""> <img src="./smedialogos/magnify.png" alt=""></span>
+                            </button>
                             <button id="mic-button" type="button">
                                 <i class="fa-regular fa-microphone"></i>
                             </button>
                         </div>
+
+                        <!-- JavaScript code -->
+                        <script>
+                            function googleSearch() {
+                                var text = document.getElementById("search").value;
+                                var cleanQuery = text.replace(" ", "+", text);
+                                var url = 'http://www.google.com/search?q=' + cleanQuery;
+                                window.location.href = url;
+                            }
+
+                            function handleInput(input) {
+                                var searchBox = document.getElementById("search");
+                                var suggestions = document.getElementById("suggestions");
+
+                                // If search box is empty, hide suggestions and return
+                                if (searchBox.value === "") {
+                                    suggestions.style.display = "none";
+                                    return;
+                                }
+
+                                var script = document.createElement('script');
+                                script.setAttribute('type', 'text/javascript');
+                                script.setAttribute('src', 'http://suggestqueries.google.com/complete/search?callback=handleSuggestions&hl=en&ds=yt&q=' + input.value);
+                                document.body.appendChild(script);
+                            }
+
+                            function handleSuggestions(data) {
+                                var suggestions = document.getElementById("suggestions");
+                                suggestions.style.display = "block";
+                                suggestions.innerHTML = "";
+                                var results = data[1];
+                                for (var i = 0; i < results.length; i++) {
+                                    var suggestion = document.createElement("div");
+                                    suggestion.className = "suggestion";
+                                    suggestion.innerHTML = results[i][0];
+                                    suggestions.appendChild(suggestion);
+                                }
+                            }
+
+                            // Create the suggestions box and append it to the search container
+                            var suggestions = document.createElement("div");
+                            suggestions.id = "suggestions";
+                            document.getElementById("search-container").appendChild(suggestions);
+                        </script>
+
+                        <!-- CSS code -->
+                        <style>
+                            #suggestions {
+                                position: absolute;
+                                background-color: white;
+                                border: 1px solid gray;
+                                width: 300px;
+                                max-height: 200px;
+                                overflow-y: auto;
+                                display: none;
+                                z-index: 1;
+                            }
+
+                            .suggestion {
+                                padding: 5px;
+                                cursor: pointer;
+                            }
+
+                            .suggestion:hover {
+                                background-color: #f4f4f4;
+                            }
+                        </style>
+
 
                         <!------------------------to handel Enter Key press for google search--------------------------------- -->
                         <script>
@@ -185,6 +266,14 @@
                         <!-- _______________________________________________________________________________________________________________________________________________________________________________________ -->
                         <!-- -------------------------------------------------------------------WebCards-------------------------------------------------------------------------------------------------------- -->
                         <div id="apps-container">
+
+                            <a href="https://web.whatsapp.com/" id="link">
+                                <i class=""><img src="./smedialogos/whatsapp.png" alt="" height="31"></i>
+                                <div class="label">
+                                    <span class="name">WhatsApp</span>
+                                    <span class="url" contenteditable="true">web.whatsapp.com</span>
+                                </div>
+                            </a>
 
                             <a href="https://stackoverflow.com" id="link">
                                 <i class=""><svg aria-hidden="true" class="svg-icon iconLogoGlyphMd native native"

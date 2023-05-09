@@ -6,6 +6,7 @@ function googleSearch() {
     window.location.href = url;
 }
 
+
 // -----------------------------random Background seter from 67images ------------------------------
 function setRandomBackground() {
     const imagePath = "bg/";
