@@ -30,7 +30,7 @@ This homepage has the following features:
 
 ## Preview
 
-![Codder-Browser Home Page Preview1](./preview/1.png)
+![Codder-Browser Home Page Preview1](https://github.com/Virus1260/Coder-Browser/preview/1.png)
 ![Codder-Browser Home Page Preview2](./preview/2.png)
 ![Codder-Browser Home Page Preview3](./preview/3.png)
 ![Codder-Browser Home Page Preview4](./preview/4.png)
